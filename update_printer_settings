@@ -1,0 +1,10 @@
+<# Loop through printers and update settings such as papersize, Color and duplexing
+Tested on Win 10 
+#>
+
+$printers = get-printer * 
+foreach ($printer in $printers)
+{ 
+    Set-printconfiguration -printerName $printer.name -PaperSize A4 -Color 0 -DuplexingMode TwoSidedLongEdge
+
+}
